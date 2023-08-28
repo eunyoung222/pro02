@@ -1,0 +1,25 @@
+package edu.chunjae.controller.event;
+
+import edu.chunjae.dto.Event;
+import edu.chunjae.model.EventDAO;
+
+import javax.servlet.*;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.*;
+import java.io.IOException;
+import java.util.List;
+
+@WebServlet("/EventList.do")
+public class EventListCtrl extends HttpServlet {
+    @Override
+    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setAttribute("msg", "이벤트 목록을 출력합니다.");
+
+        EventDAO dao = new EventDAO();
+        List<Event> eventList = dao.getEventList();
+        request.setAttribute("eventList", eventList);
+
+        RequestDispatcher view = request.getRequestDispatcher("/event/eventList.jsp");
+        view.forward(request, response);
+    }
+}
