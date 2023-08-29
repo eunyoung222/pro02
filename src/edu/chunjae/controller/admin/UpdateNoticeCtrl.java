@@ -4,9 +4,11 @@ import edu.chunjae.dto.Notice;
 import edu.chunjae.model.NoticeDAO;
 
 import javax.servlet.*;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
 
+@WebServlet("/UpdateNotice.do")
 public class UpdateNoticeCtrl extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

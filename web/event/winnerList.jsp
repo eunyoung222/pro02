@@ -67,6 +67,52 @@
             font-size: 18px;
         }
 
+        .tab li {
+            flex: 1;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        ul:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        ul {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            padding-left: 2rem;
+        }
+
+        .tab {
+            position: relative;
+            display: flex;
+            text-align: center;
+            border: 1px solid #d7d8da;
+        }
+
+        .tab li > a {
+            text-decoration: none;
+            display: block;
+            line-height: 55px;
+            border-left: 1px solid #d7d8da;
+            background: #fff;
+            color: #666;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .tab li > a.active {
+            color: #fff;
+            background: #69748a;
+            font-weight: 600;
+        }
 
 
 
@@ -82,8 +128,16 @@
 <body>
 <div class="container-fluid">
     <%@ include file="../header.jsp"%>
-    <h2 class="title">당첨자 발표</h2>
+    <h2 class="title"></h2>
     <div class="container">
+        <ul class="tab">
+            <li>
+                <a href="/EventList.do" >이벤트</a>
+            </li>
+            <li>
+                <a href="/WinnerList.do" class="active">당첨자 발표</a>
+            </li>
+        </ul>
         <div class="box_wrap">
             <table class="winner-list" id="tb1">
                 <thead>

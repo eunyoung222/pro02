@@ -13,7 +13,7 @@ public interface DBConnect {
 
     final static String EVENT_SELECT_ALL = "select * from event order by no desc";
     final static String EVENT_SELECT_ONE = "select * from event where no=?";
-    final static String EVENT_INSERT = "insert into event values (default,?,?,default);";
+    final static String EVENT_INSERT = "insert into event values (default,?,?,default, ?);";
     final static String EVENT_UPDATE = "update event set title=?, content=? where no=?";
     final static String EVENT_DELETE = "delete from event where no=?";
 

@@ -38,7 +38,7 @@
     }
 
     .img-fluid {
-        border-radius: 20px;
+        border-radius: 100px;
         overflow: hidden;
     }
 

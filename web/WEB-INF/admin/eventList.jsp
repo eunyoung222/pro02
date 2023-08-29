@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>이벤트</title>
     <c:set var="path" value="<%=request.getContextPath() %>" />
-    <%@ include file="../common.jsp"%>
+    <%@ include file="/common.jsp"%>
     <script src=""></script>
 
     <style>
@@ -172,47 +172,61 @@
             padding: 6px 0 0 45px;
         }
 
+        .btn {
+            text-decoration: none;
+            border-radius: 20px;
+            margin: 15px;
+            padding: 10px;
+            float: right;
+            background-color: #1D7151;
+            border-color: #1D7151;
+            color: #ffffff;
+        }
+
+        .msg {
+            line-height: 30px;
+            text-align: center;
+        }
+
 
     </style>
 
 </head>
 <body>
-<div class="container-fluid">
-    <%@ include file="../header.jsp"%>
-    <h2 class="title"></h2>
+<div class="container-fluid" style="height: 80px">
+    <%@ include file="/header.jsp"%>
+    <h2 class="title">이벤트</h2>
+        <p class="msg">관리자만 이용가능합니다.</p>
     <div class="container">
-        <ul class="tab">
-            <li>
-                <a href="/event/eventList.jsp" class="active">이벤트</a>
-            </li>
-            <li>
-                <a href="/WinnerList.do">당첨자 발표</a>
-            </li>
-        </ul>
         <div class="event-list">
             <c:forEach var="event" items="${eventList }" varStatus="status">
-            <li>
-                <ul class="event-item">
-                    <a href="${path }/Event.do?no=${event.no }" target="_blank">
-                        <div class="thumb-img">
+                <li>
+                    <ul class="event-item">
+                        <a href="${path }/AdminEvent.do?no=${event.no }" target="_blank">
+                            <div class="thumb-img">
                             <span class="img">
                                 <img src="${event.img}" alt="이벤트 이미지">
                             </span>
-                        </div>
-                    </a>
-                    <div class="exp">
-                        <a href="${path }/Event.do?no=${event.no }" target="_blank">
-                            <strong>
-                                ${event.title}
-                            </strong>
-                            <p>${event.content}</p>
+                            </div>
                         </a>
-                    </div>
-                </ul>
-            </li>
+                        <div class="exp">
+                            <a href="${path }/AdminEvent.do?no=${event.no }" target="_blank">
+                                <strong>
+                                        ${event.title}
+                                </strong>
+                                <p>${event.content}</p>
+                            </a>
+                        </div>
+                    </ul>
+                </li>
             </c:forEach>
-        <%@ include file="../footer.jsp" %>
+            <div class="group container">
+                <a href="${path }/AddEvent.do" class="btn">글 등록</a>
+            </div>
+            <%@ include file="/footer.jsp" %>
+        </div>
     </div>
-</div>
 </body>
 </html>
+
+

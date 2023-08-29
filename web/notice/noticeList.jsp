@@ -127,7 +127,6 @@
                         </tr>
                     </thead>
                     <tbody>
-
                     <c:forEach var="noti" items="${notiList }" varStatus="status">
                     <tr>
                         <td class="item1">${status.count }</td>

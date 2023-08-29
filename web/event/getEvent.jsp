@@ -6,40 +6,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>이벤트</title>
+    <title>이벤트 상세보기</title>
     <c:set var="path" value="<%=request.getContextPath() %>" />
     <%@ include file="../common.jsp"%>
 </head>
+
+<style>
+    .th {
+        text-align: center;
+    }
+</style>
+
 <body>
-<div class="container-fluid">
-    <%@ include file="../header.jsp"%>
-    <div class="contents" style="min-height:100vh">
-        <h2 class="title">이벤트</h2>
-        <div class="container">
-            <div class="box_wrap">
-                <ul class="list row">
-                    <c:forEach var="pro" items="${eventList }" varStatus="status">
-                        <li class="col-3">
-                            <div class="card" style="width: 18rem;">
-                                <div class="img-wrap" style="height:286px;overflow:hidden;">
-                                    <img src="${path }/storage/${pro.imgSrc1 }" class="card-img-top" alt="샘플이미지">
-                                </div>
-                                <div class="card-body">
-                                    <h3 class="card-title" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${pro.pname }</h3>
-                                    <p class="card-text">가격 : ${pro.price }</p>
-                                    <a href="${path }/Product.do?pno=${pro.pno }" class="btn btn-primary">상세보기</a>
-                                </div>
-                            </div>
-                        </li>
-                    </c:forEach>
-                    <c:if test="${empty eventList}">
-                        <li class="col-12">해당 이벤트가 존재하지 않습니다.</li>
-                    </c:if>
-                </ul>
+<div>
+    <div class="container-fluid" style="min-height:100vh;">
+        <%@ include file="../header.jsp"%>
+        <div class="contents">
+            <h2 class="title"></h2>
+            <div class="container">
+                <div class="box_wrap">
+                    <table class="table" id="tb1">
+                        <tbody>
+                        <tr>
+                            <th class="th">번호</th>
+                            <td>${event.no }</td>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <td>
+                                <img src="${event.img}" alt="이벤트 이미지">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="th">제목</th>
+                            <td>${event.title }</td>
+                        </tr>
+                        <tr>
+                            <th class="th">내용</th>
+                            <td>${event.content }</td>
+                        </tr>
+                        <tr>
+                            <th class="th">등록일</th>
+                            <td>${event.resdate }</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="btn-group" style="float: right">
+                    <a href="${path }/EventList.do" class="btn">목록으로</a>
+                </div>
             </div>
         </div>
+        <%@ include file="../footer.jsp" %>
     </div>
-    <%@ include file="../footer.jsp" %>
 </div>
 </body>
 </html>

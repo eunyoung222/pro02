@@ -10,6 +10,13 @@
     <c:set var="path" value="<%=request.getContextPath() %>" />
     <%@ include file="../common.jsp"%>
 </head>
+
+<style>
+    .th {
+        text-align: center;
+    }
+</style>
+
 <body>
 <div>
     <div class="container-fluid" style="min-height:100vh;">
@@ -21,19 +28,19 @@
                     <table class="table" id="tb1">
                         <tbody>
                         <tr>
-                            <th>글 번호</th>
+                            <th class="th">번호</th>
                             <td>${noti.no }</td>
                         </tr>
                         <tr>
-                            <th>글 제목</th>
+                            <th class="th">제목</th>
                             <td>${noti.title }</td>
                         </tr>
                         <tr>
-                            <th>글 내용</th>
+                            <th class="th">내용</th>
                             <td>${noti.content }</td>
                         </tr>
                         <tr>
-                            <th>등록일</th>
+                            <th class="th">등록일</th>
                             <td>${noti.resdate }</td>
                         </tr>
                         </tbody>

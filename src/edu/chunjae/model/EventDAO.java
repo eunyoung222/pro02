@@ -21,6 +21,7 @@ public class EventDAO {
             while(rs.next()){
                 Event event = new Event();
                 event.setImg(rs.getString("img"));
+                event.setNo(rs.getInt("no"));
                 event.setTitle(rs.getString("title"));
                 event.setContent(rs.getString("content"));
                 event.setResdate(rs.getString("resdate"));
@@ -70,6 +71,7 @@ public class EventDAO {
             pstmt = conn.prepareStatement(DBConnect.EVENT_INSERT);
             pstmt.setString(1, event.getTitle());
             pstmt.setString(2, event.getContent());
+            pstmt.setString(3, event.getImg());
             cnt = pstmt.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -87,12 +89,13 @@ public class EventDAO {
             System.out.println("PostgreSQL 연결 성공");
         }
 
-        String sql = "update event set title=?, content=? where no=?";
+        String sql = "update event set img=?, title=?, content=? where no=?";
         try {
             pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, "수정 DAO테스트1");
-            pstmt.setString(2, "수정 DAO테스트내용입니다.1");
-            pstmt.setInt(3, 3);
+            pstmt.setString(1, "수정 DAO테스트 이미지");
+            pstmt.setString(2, "수정 DAO테스트2");
+            pstmt.setString(3, "수정 DAO테스트내용입니다.1");
+            pstmt.setInt(4, 4);
             cnt = pstmt.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -113,7 +116,7 @@ public class EventDAO {
         String sql = "delete from event where no=?";
         try {
             pstmt = conn.prepareStatement(sql);
-            pstmt.setInt(1, 5);
+            pstmt.setInt(1, no);
             cnt = pstmt.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);

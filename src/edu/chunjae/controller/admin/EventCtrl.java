@@ -1,14 +1,17 @@
-package edu.chunjae.controller.event;
+package edu.chunjae.controller.admin;
 
 import edu.chunjae.dto.Event;
 import edu.chunjae.model.EventDAO;
 
-import javax.servlet.*;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.*;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/Event.do")
+@WebServlet("/AdminEvent.do")
 public class EventCtrl extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -16,7 +19,7 @@ public class EventCtrl extends HttpServlet {
         EventDAO dao = new EventDAO();
         Event event = dao.getEvent(no);
         request.setAttribute("event", event);
-        RequestDispatcher view = request.getRequestDispatcher("/event/getEvent.jsp");
+        RequestDispatcher view = request.getRequestDispatcher("/WEB-INF/admin/getEvent.jsp");
         view.forward(request, response);
     }
 }
