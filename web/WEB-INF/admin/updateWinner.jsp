@@ -6,9 +6,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>이벤트 글쓰기</title>
+    <title>당첨자 발표 글 수정하기</title>
     <c:set var="path" value="<%=request.getContextPath() %>" />
     <%@ include file="../../common.jsp"%>
+
     <style>
         #tb1 { width:960px; margin:40px auto; }
         #tb1 th { background-color: #1D7151;
@@ -21,9 +22,7 @@
         .item2 { width:70%; }
         .item3 { width:10%; }
         #page-nation1 { width: 960px; margin:20px auto; }
-    </style>
 
-    <style>
         .btn {
             text-decoration: none;
             border-radius: 20px;
@@ -33,11 +32,6 @@
             background-color: #1D7151;
             border-color: #1D7151;
             color: #ffffff;
-        }
-
-        .msg {
-            line-height: 12px;
-            text-align: center;
         }
 
         .title {
@@ -56,46 +50,35 @@
             height: 323px;
         }
 
-
     </style>
+
 </head>
-
-
 <body>
 <div class="container-fluid">
     <%@ include file="../../header.jsp"%>
     <div class="contents" style="min-height:100vh">
-        <h2 class="title">이벤트 등록하기</h2>
-        <p class="msg">관리자만 이용가능합니다.</p>
+        <h2 class="title">당첨자 발표 수정하기</h2>
         <div class="container">
             <div class="box_wrap">
-                <form action="${path }/AddEventPro.do" method="post">
-                    <table class="table" id="tb1">
+                <form action="${path }/UpdateWinnerPro.do" method="post">
+                    <table class="table table-secondary" id="tb1">
                         <tbody>
                         <tr>
-                            <th>사진</th>
+                            <th class="th">제목</th>
                             <td>
-                                <input type="file" name="imageFile" id="imageFile" accept="image/png, image/jpeg">
+                                <input type="text" value="${winner.title }" name="title" id="title" class="form-control1" required/>
+                                <input type="hidden" name="no" id="no" value="${winner.no }">
                             </td>
                         </tr>
                         <tr>
-                            <th>제목</th>
-                            <td>
-                                <input type="text" name="title" id="title" class="form-control1">
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>내용</th>
-                            <td>
-                                <textarea name="content" id="content" class="form-control2">
-                                </textarea>
-                            </td>
+                            <th class="th">내용</th>
+                            <td><textarea name="content" id="content" class="form-control2" required>${winner.content }</textarea></td>
                         </tr>
                         </tbody>
                     </table>
                     <div class="group container">
-                        <input type="submit" value="글 등록" class="btn"/>
-                        <a href="${path }/AdminEventList.do" class="btn">목록으로</a>
+                        <button type="submit" class="btn">수정</button>
+                        <a href="${path }/AdminWinnerList.do" class="btn">목록</a>
                     </div>
                 </form>
             </div>

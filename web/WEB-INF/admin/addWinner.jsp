@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>이벤트 글쓰기</title>
+    <title>당첨자 발표 글쓰기</title>
     <c:set var="path" value="<%=request.getContextPath() %>" />
     <%@ include file="../../common.jsp"%>
     <style>
@@ -65,19 +65,13 @@
 <div class="container-fluid">
     <%@ include file="../../header.jsp"%>
     <div class="contents" style="min-height:100vh">
-        <h2 class="title">이벤트 등록하기</h2>
+        <h2 class="title">당첨자 발표 등록</h2>
         <p class="msg">관리자만 이용가능합니다.</p>
         <div class="container">
             <div class="box_wrap">
-                <form action="${path }/AddEventPro.do" method="post">
+                <form action="${path }/AddWinnerPro.do" method="post">
                     <table class="table" id="tb1">
                         <tbody>
-                        <tr>
-                            <th>사진</th>
-                            <td>
-                                <input type="file" name="imageFile" id="imageFile" accept="image/png, image/jpeg">
-                            </td>
-                        </tr>
                         <tr>
                             <th>제목</th>
                             <td>
@@ -95,7 +89,7 @@
                     </table>
                     <div class="group container">
                         <input type="submit" value="글 등록" class="btn"/>
-                        <a href="${path }/AdminEventList.do" class="btn">목록으로</a>
+                        <a href="${path }/AdminWinnerList.do" class="btn">목록으로</a>
                     </div>
                 </form>
             </div>

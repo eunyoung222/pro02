@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>이벤트</title>
+    <title>당첨자 발표</title>
     <c:set var="path" value="<%=request.getContextPath() %>" />
     <%@ include file="../../common.jsp"%>
     <style>
@@ -43,38 +43,34 @@
 <div class="container-fluid">
     <%@ include file="../../header.jsp"%>
     <div class="contents" style="min-height:100vh">
-        <h2 class="title"></h2>
+        <h2 class="title">당첨자 발표 상세보기</h2>
         <div class="container">
             <div class="box_wrap">
                 <table class="table" id="tb1">
                     <tbody>
                     <tr>
                         <th class="th">번호</th>
-                        <td>${event.no }</td>
-                    </tr>
-                    <tr>
-                        <th class="th"></th>
-                        <td><img src="${event.img }" alt="이벤트 이미지"></td>
+                        <td>${winner.no }</td>
                     </tr>
                     <tr>
                         <th class="th">제목</th>
-                        <td>${event.title }</td>
+                        <td>${winner.title }</td>
                     </tr>
                     <tr>
                         <th class="th">내용</th>
-                        <td>${event.content }</td>
+                        <td>${winner.content }</td>
                     </tr>
                     <tr>
                         <th class="th">등록일</th>
-                        <td>${event.resdate }</td>
+                        <td>${winner.resdate }</td>
                     </tr>
                     </tbody>
                 </table>
 
                 <div class="group container">
-                    <a href="${path }/AdminEventList.do" class="btn">목록</a>
-                    <a href="${path }/UpdateEvent.do?no=${event.no }" class="btn">수정</a>
-                    <a href="${path }/DeleteEvent.do?no=${event.no }" class="btn">삭제</a>
+                    <a href="${path }/AdminWinnerList.do" class="btn">목록으로</a>
+                    <a href="${path }/UpdateWinner.do?no=${winner.no }" class="btn">수정</a>
+                    <a href="${path }/DeleteWinner.do?no=${winner.no }" class="btn">삭제</a>
                 </div>
             </div>
         </div>
@@ -82,6 +78,4 @@
     <%@ include file="../../footer.jsp" %>
 </div>
 </body>
-</html>
-
 </html>

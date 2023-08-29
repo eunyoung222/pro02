@@ -68,7 +68,7 @@
                 </table>
 
                 <div class="group container">
-                    <a href="${path }/AdminNoticeList.do" class="btn">목록으로</a>
+                    <a href="${path }/AdminNoticeList.do" class="btn">목록</a>
                     <a href="${path }/UpdateNotice.do?no=${noti.no }" class="btn">수정</a>
                     <a href="${path }/DeleteNotice.do?no=${noti.no }" class="btn">삭제</a>
                 </div>

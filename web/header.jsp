@@ -47,6 +47,7 @@
                         <c:if test="${sid eq 'admin' }">
                             <li class="nav-item"><a href="${path1 }/AdminNoticeList.do" class="nav-link">Admin Notice</a></li>
                             <li class="nav-item"><a href="${path1 }/AdminEventList.do" class="nav-link">Admin Event</a></li>
+                            <li class="nav-item"><a href="${path1 }/AdminWinnerList.do" class="nav-link">Admin Winner</a></li>
                         </c:if>
                         <c:if test="${!empty sid }">
                             <li class="nav-item"><a href="${path1 }/Mypage.do" class="nav-link">Mypage</a></li>

@@ -175,9 +175,9 @@
         .btn {
             text-decoration: none;
             border-radius: 20px;
-            margin: 15px;
             padding: 10px;
-            float: right;
+            margin-top: 40px;
+            margin-left: 1200px;
             background-color: #1D7151;
             border-color: #1D7151;
             color: #ffffff;
@@ -220,12 +220,10 @@
                     </ul>
                 </li>
             </c:forEach>
-            <div class="group container">
                 <a href="${path }/AddEvent.do" class="btn">글 등록</a>
-            </div>
-            <%@ include file="/footer.jsp" %>
         </div>
     </div>
+        <%@ include file="/footer.jsp" %>
 </body>
 </html>
 

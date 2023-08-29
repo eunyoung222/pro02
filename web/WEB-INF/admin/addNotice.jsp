@@ -89,7 +89,7 @@
                     </table>
                     <div class="group container">
                         <input type="submit" value="글 등록" class="btn"/>
-                        <a href="${path }/AdminNoticeList.do" class="btn">목록으로</a>
+                        <a href="${path }/AdminNoticeList.do" class="btn">목록</a>
                     </div>
                 </form>
             </div>
