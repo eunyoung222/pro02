@@ -69,13 +69,13 @@
         <p class="msg">관리자만 이용가능합니다.</p>
         <div class="container">
             <div class="box_wrap">
-                <form action="${path }/AddEventPro.do" method="post">
+                <form action="${path }/AddEventPro.do" method="post" enctype="multipart/form-data">
                     <table class="table" id="tb1">
                         <tbody>
                         <tr>
                             <th>사진</th>
                             <td>
-                                <input type="file" name="imageFile" id="imageFile" accept="image/png, image/jpeg">
+                                <input type="file" name="img" id="img" accept="image/png, image/jpeg">
                             </td>
                         </tr>
                         <tr>

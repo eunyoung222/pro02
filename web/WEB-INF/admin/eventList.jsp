@@ -205,7 +205,7 @@
                         <a href="${path }/AdminEvent.do?no=${event.no }" target="_blank">
                             <div class="thumb-img">
                             <span class="img">
-                                <img src="${event.img}" alt="이벤트 이미지">
+                                <img src="${path }/storage/${event.img}" alt="이벤트 이미지">
                             </span>
                             </div>
                         </a>

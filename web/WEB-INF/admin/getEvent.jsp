@@ -54,7 +54,7 @@
                     </tr>
                     <tr>
                         <th class="th"></th>
-                        <td><img src="${event.img }" alt="이벤트 이미지"></td>
+                        <td><img src=${path }/storage/${event.img}" alt="이벤트 이미지"></td>
                     </tr>
                     <tr>
                         <th class="th">제목</th>

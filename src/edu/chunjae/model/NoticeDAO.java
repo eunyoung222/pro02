@@ -89,9 +89,9 @@ public class NoticeDAO {
         String sql = "update notice set title=?, content=? where no=?";
         try {
             pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, "수정 DAO테스트1");
-            pstmt.setString(2, "수정 DAO테스트내용입니다.1");
-            pstmt.setInt(3, 3);
+            pstmt.setString(1, noti.getTitle());
+            pstmt.setString(2, noti.getContent());
+            pstmt.setInt(3, noti.getNo());
             cnt = pstmt.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);

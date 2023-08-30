@@ -92,10 +92,10 @@ public class EventDAO {
         String sql = "update event set img=?, title=?, content=? where no=?";
         try {
             pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, "수정 DAO테스트 이미지");
-            pstmt.setString(2, "수정 DAO테스트2");
-            pstmt.setString(3, "수정 DAO테스트내용입니다.1");
-            pstmt.setInt(4, 4);
+            pstmt.setString(1, event.getImg());
+            pstmt.setString(2, event.getTitle());
+            pstmt.setString(3, event.getContent());
+            pstmt.setInt(4, event.getNo());
             cnt = pstmt.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);

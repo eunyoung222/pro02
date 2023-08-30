@@ -89,9 +89,9 @@ public class WinnerDAO {
         String sql = "update winner set title=?, content=? where no=?";
         try {
             pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, "수정 DAO테스트1");
-            pstmt.setString(2, "수정 DAO테스트내용입니다.1");
-            pstmt.setInt(3, 3);
+            pstmt.setString(1, winner.getTitle());
+            pstmt.setString(2, winner.getContent());
+            pstmt.setInt(3, winner.getNo());
             cnt = pstmt.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -112,7 +112,7 @@ public class WinnerDAO {
         String sql = "delete from winner where no=?";
         try {
             pstmt = conn.prepareStatement(sql);
-            pstmt.setInt(1, 5);
+            pstmt.setInt(1, no);
             cnt = pstmt.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
