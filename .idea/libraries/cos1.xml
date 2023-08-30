@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="cos">
+  <library name="cos1">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../cos.jar!/" />
+      <root url="jar://$PROJECT_DIR$/cos.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
